@@ -1,0 +1,80 @@
+Flexo Release Notes v1.1
+
+Thank you for downloading Flexo, the flexible Meshtastic powered node case the supports multiple device boards! Check the intro video on my Youtube channel http://www.youtube.com/@zerofox3d
+
+Before you print.... Flexo uses a custom PCB power switch which I had designed and manufactured by PCBway plus a few screws to secure the boards internally. You could build Flexo without the switch by wiring a battery straight to the board but I sell the PCB switch with the other hardware as a kit with worldwide shipping from my website zerofox3D.com. It's not expensive and much cheaper than buying one of my fully printed case kits.
+
+So print the case and if you like it order a hardware kit!
+
+**** Printing Notes ****
+
+Printing Flexo is easy! Both STL and Prusa Slicer 3MF files are provided, I recommend using the latter as several files have custom support enforcers/blockers.
+
+I recommend printing at standard 0.2 layer height, I always test in the "Quality" preset in Prusa Slicer and always print in PLA or PLA+. Note that printing in PETG may result in poor fitting as it has different tolerances. The friction clips that are used to assemble Flexo have fine tolerances so you need a well calibrated/modern printer. In files where support is needed always use Organic/Tree supports.
+
+Flexo is broken down into several parts, you could combine them on to a single build plate but I recommend printing each separately as it reduces layer printing time which improves quality.
+
+There are folders organising the files for simplicity. The "universal" folder contains files needed regardless of which board you are using, print them all except for the battery mounts, printing which ever you are using. There are then folders fro each board containing the appropriate "front" and depending on the board a bracket. Lastly there is a folder for the Smart Mount which doubles as a wall mount or GoPro mount.
+
+**** Print File Settings ****
+
+BodyV2 - The main body of Flexo. Prints with support on the build plate only (organic / tree recommended)
+
+SupportBarV1 - Used to stiffen the main body. Prints with no support.
+
+18650MountV1 - Mounting brackets for an 18650 battery holder. Prints with support on the build plate only (organic / tree recommended)EEMB3700MountV1 - Mounting brackets for the EEMB 3700mah battery. Prints with support on the build plate only (organic / tree recommended)ButtonV1 - The front power button. Prints with support on the build plate only (organic / tree recommended)ButtonSupportV1 - Small bracket that supports the PCB power switch. Prints with no support.SMAHexToolV2 - Hex nut wrench for tightening your SMA connector nut! Prints with no support.
+
+RakFrontV1 - Front panel for the Rak 19007 / 19003. Prints with support on the build plate only (organic / tree recommended)
+HeltecV3FrontV1 - Front panel for the HeltecV3. Prints with support on the build plate only (organic / tree recommended)
+
+HeletecV3BracketV1 - Bracket for the HeltecV3. Prints with no support.
+
+HeltecT114FrontV1 - Front panel for the HeltecT114. Prints with support everywhere due to the GPS mount. I recommend using the 3MF with the customer support blockers as it stops support being generated in silly places (organic / tree recommended)
+
+HeltecT114BracketV1 - Bracket for the HeltecT114. Prints with no support.
+
+PicoFrontV1 - Front panel for the RaspberryPi Pico with Waveshare Lora Hat. Prints with support on the build plate only (organic / tree recommended)
+
+FrontWTrackerV1 - Front panel for the Heltec Wireless Tracker. Prints with support on the build plate only (organic / tree recommended)
+
+WTrackerSupportV1 - Bracket for the Heltec Wireless Tracker. Prints with no support.
+
+FrontT190V1 - Front panel for the Heltec T190. Prints with support on the build plate only (organic / tree recommended)
+
+T190SupportV1 - Bracket for the HeltecT90. Prints with no support.
+
+SmartMountV1 - Smart Mount (wall mount / Go Pro mount plate) Prints with support on the build plate only (organic / tree recommended)
+
+GoProMountV1 - GoPro prongs that can be added to the Smart mount.  Prints with no support.
+
+**** Assembly ****
+
+Assembly video will be available on YouTube at this link: https://zerofox3d.com/buildflexo
+
+(If its not available it will be in a few days)
+
+**** REQUIRED Hardware ****
+
+The hardware kit available from my site https://zerofox3d.com includes all the hardware needed to build Flexo. You just need to add your board, battery and antenna.
+
+Flexo currently supports the following boards:
+
+Rak Wireless 19007 and 19003 with GPS module mount
+HeltecV3
+HeltecT114 with GPS module mount
+RaspberryPi Pico with WaveShare LORA hat
+
+The following batteries are supported:
+
+18650 battery. Standard 3.7v, widely available.
+
+EEMB Model 103395 3700mah flat LIPO with PCM chip
+UK - https://www.amazon.co.uk/dp/B08215B4KK
+US - https://www.amazon.com/dp/B08215B4KK
+(Also available worldwide through Amazon)
+
+Releases
+
+v1.0 - Added Heltec Vision Master T190 and Heltec Wireless Tracker support
+
+v1.0 - Initial release

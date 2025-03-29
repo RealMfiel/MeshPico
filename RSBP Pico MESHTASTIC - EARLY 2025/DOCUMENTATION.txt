@@ -1,0 +1,106 @@
+________                                             __          __  .__               
+\______ \   ____   ____  __ __  _____   ____   _____/  |______ _/  |_|__| ____   ____  
+ |    |  \ /  _ \_/ ___\|  |  \/     \_/ __ \ /    \   __\__  \\   __\  |/  _ \ /    \ 
+ |    `   (  <_> )  \___|  |  /  Y Y  \  ___/|   |  \  |  / __ \|  | |  (  <_> )   |  \
+/_______  /\____/ \___  >____/|__|_|  /\___  >___|  /__| (____  /__| |__|\____/|___|  /
+        \/            \/            \/     \/     \/          \/                    \/ 
+
+AS OF 30/3/25
+----------------------------------------------------------------------------------------------------------------------------
+BASIC STEP BY STEP
+
+1. Gather all necessary items and unpackage everything
+2. Connect the LoRa module to the raspberry pi Pico by the GPIO Headers
+	-!WARNING!-
+	Do NOT power on the device or connect a USB cable until the antenna has been
+	Connected to the LoRa radio module or you may FRY/DESTROY the Radio Module
+3. Attach the antenna the to LoRa radio module using the connector on the board
+	NOTE: You may substitute the antenna for a piece of wire by soldering the
+	Wire to the connector pad on the LoRa module
+4. Visit -https://flasher.meshtastic.org/- and in the device section,
+	Select Raspberry Pi Pico and select the latest BETA release,
+	Then proceed with the download until you have downloaded the UF2 file.
+	NOTE: I will supply the UF2 file in this folder HOWEVER, I recommend
+	You visit the flasher and download the latest BETA Release.
+5. Hold down the BOOT Button near the USB Micro Port on the raspberry pi Pico,
+	Then connect the board to your computer while holding the BOOT button down
+	Until you see a removeable drive pop up in your file explorer
+6. Copy the UF2 Files that you just downloaded (Or copy the one I have supplied)
+	Into the removeable drive (The raspberry Pico)
+7. Since there is no way to get Bluetooth funciotanily on the Pico as of 30/3/2025,
+	visit -https://client.meshtastic.org/- and add a new device via serial (The usb connection),
+	And select the pico
+8. Set up the region by visiting the radio config and selecting your region
+----------------------------------------------------------------------------------------------------------------------------
+
+
+     _______..______    _______   ______  __   _______  __    ______     ___   .___________. __    ______   .__   __.      _______.
+    /       ||   _  \  |   ____| /      ||  | |   ____||  |  /      |   /   \  |           ||  |  /  __  \  |  \ |  |     /       |
+   |   (----`|  |_)  | |  |__   |  ,----'|  | |  |__   |  | |  ,----'  /  ^  \ `---|  |----`|  | |  |  |  | |   \|  |    |   (----`
+    \   \    |   ___/  |   __|  |  |     |  | |   __|  |  | |  |      /  /_\  \    |  |     |  | |  |  |  | |  . `  |     \   \    
+.----)   |   |  |      |  |____ |  `----.|  | |  |     |  | |  `----./  _____  \   |  |     |  | |  `--'  | |  |\   | .----)   |   
+|_______/    | _|      |_______| \______||__| |__|     |__|  \______/__/     \__\  |__|     |__|  \______/  |__| \__| |_______/    
+                                                                                                                                   
+
+    MCU:
+        Raspberry Pi RP2040
+            Dual M0+ Core
+            133MHz CPU Clock
+    Connectors (On Pico):
+        Micro-USB on Pico
+
+
+NOTE - Please be aware that the Raspberry Pi Pico must be used in combination with a Waveshare LoRa Module,
+	which provides the necessary SX1262 LoRa radio. Please ensure to select the correct frequency for your region.
+
+
+    LoRa Transceiver (On LoRa Module):
+        SX1262
+    Frequency Options:
+        410 - 525 MHz
+        863 - 870 MHz
+        902 - 930 MHz
+    Connectors (On LoRa Module):
+        U.FL/IPEX antenna connector for LoRa
+        1.25mm 2-Pin JST for battery
+
+NOTE - LoRa transmissions may interfere with the USB connection,
+	It is recommended to place the antenna as far away from the USB port as possible.
+----------------------------------------------------------------------------------------------------------------------------
+
+
+ /$$      /$$ /$$                               /$$ /$$                                                                  
+| $$$    /$$$|__/                              | $$| $$                                                                  
+| $$$$  /$$$$ /$$  /$$$$$$$  /$$$$$$$  /$$$$$$ | $$| $$  /$$$$$$  /$$$$$$$   /$$$$$$   /$$$$$$  /$$   /$$  /$$$$$$$      
+| $$ $$/$$ $$| $$ /$$_____/ /$$_____/ /$$__  $$| $$| $$ |____  $$| $$__  $$ /$$__  $$ /$$__  $$| $$  | $$ /$$_____/      
+| $$  $$$| $$| $$|  $$$$$$ | $$      | $$$$$$$$| $$| $$  /$$$$$$$| $$  \ $$| $$$$$$$$| $$  \ $$| $$  | $$|  $$$$$$       
+| $$\  $ | $$| $$ \____  $$| $$      | $$_____/| $$| $$ /$$__  $$| $$  | $$| $$_____/| $$  | $$| $$  | $$ \____  $$      
+| $$ \/  | $$| $$ /$$$$$$$/|  $$$$$$$|  $$$$$$$| $$| $$|  $$$$$$$| $$  | $$|  $$$$$$$|  $$$$$$/|  $$$$$$/ /$$$$$$$/      
+|__/     |__/|__/|_______/  \_______/ \_______/|__/|__/ \_______/|__/  |__/ \_______/ \______/  \______/ |_______/       
+                                                                                                                         
+Resources:
+Firmware file:firmware-pico-X.X.X.xxxxxxx.uf2
+for Pico W use: firmware-picow-X.X.X.xxxxxxx.uf2
+
+Raspberry Pi Pico Supported Peripherals -
+	I2C peripherals like OLED Displays (e.g. SSD1306 or SH1106) and keyboards (e.g. CardKB) can be connected to GPIO pins 4 (SDA) and 5 (SCL)c
+		Which will be recognized on boot. Note that for keyboard input,
+		The Canned Message Module has to be enabled and the input source should be specified.
+	I have also included a circuit diagram to help you configure peripherals to your system
+
+3D Printed Cases -
+	I have provided some files to 3D print cases for added organisation and protection to the device
+	For more information on the cases visit: https://www.printables.com/model/1057327-flexo-meshtastic-powered-node-case-for-rak-wisbloc
+
+----------------------------------------------------------------------------------------------------------------------------
+   ____                     _   _   _         
+  / ___|  _ __    ___    __| | (_) | |_   ___ 
+ | |     | '__|  / _ \  / _` | | | | __| / __|
+ | |___  | |    |  __/ | (_| | | | | |_  \__ \
+  \____| |_|     \___|  \__,_| |_|  \__| |___/
+                                              
+Guide created by RealMfiel
+Credit for the cases: https://www.printables.com/model/1057327-flexo-meshtastic-powered-node-case-for-rak-wisbloc
+Credit for specifications & Peripheral documentation: https://meshtastic.org/docs/hardware/devices/raspberrypi/pico/peripherals/
+
+
